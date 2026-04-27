@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chaithanya | Portfolio</title>
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dark-mode" id="body">
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-outline" id="cursor-outline"></div>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader-content">
+            <h1 class="glitch" data-text="CHAITHANYA">CHAITHANYA</h1>
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="loader-progress"></div>
+            </div>
+            <div class="loading-text">Initializing System...</div>
+        </div>
+    </div>
+
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+    <!-- Interactive Waves -->
+    <div class="glow-bg"></div>
+
+    <!-- Navbar -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="#home">Chaithanya<span>.</span></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-controls">
+                <button id="theme-toggle" class="theme-btn" aria-label="Toggle Theme">
+                    <i class="fas fa-sun"></i>
+                </button>
+                <div class="menu-btn" id="menu-btn">
+                    <div class="menu-btn-burger"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h3 class="hero-greeting gs-reveal">Hi there, I'm</h3>
+                <h1 class="hero-name gs-reveal">Chaithanya</h1>
+                <h2 class="hero-role gs-reveal">I am a <span id="typed"></span></h2>
+                <p class="hero-desc gs-reveal">A passionate Computer Science student and aspiring software developer
+                    based in Andhra Pradesh, India. I specialize in building highly interactive and premium web
+                    applications.</p>
+                <div class="hero-cta gs-reveal">
+                    <a href="#projects" class="btn primary-btn btn-ripple">
+                        <span>View Projects</span> <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#contact" class="btn secondary-btn btn-ripple">
+                        <span>Contact Me</span>
+                    </a>
+                </div>
+                <!-- Social links in hero -->
+                <div class="hero-socials gs-reveal">
+                    <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="hero-visual gs-reveal-right">
+                <div class="visual-container">
+                    <div class="glass-orb orb-1"></div>
+                    <div class="glass-orb orb-2"></div>
+                    <div class="glass-orb orb-3"></div>
+                    <!-- 3D or image element here if needed, keeping it abstract -->
+                    <div class="abstract-shape">
+                        <i class="fas fa-code"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <a href="#about">
+                    <div class="mouse">
+                        <div class="wheel"></div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about section-padding">
+            <div class="container">
+                <div class="section-title gs-reveal">
+                    <h2><span class="neon-text">About</span> Me</h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="about-content">
+                    <div class="about-image gs-reveal-left" data-tilt data-tilt-glare data-tilt-max-glare="0.5"
+                        data-tilt-max="15">
+                        <div class="image-wrapper">
+                            <!-- Placeholder Profile Avatar -->
+                            <img src="passport_size_photo.jpg" alt="Chaithanya Profile">
+                            <div class="image-border"></div>
+                        </div>
+                    </div>
+                    <div class="about-text gs-reveal-right">
+                        <h3>Transforming visions into reality through code.</h3>
+                        <p>I am a computer science student driven by curiosity and a passion for technology. My goal is
+                            to secure a fulfilling role in the IT industry where I can continuously grow and contribute
+                            to impactful software projects. Whether it's designing a flawless interface or writing
+                            efficient backend logic, I aim for excellence.</p>
+
+                        <div class="about-stats">
+                            <div class="stat-box">
+                                <h4 class="counter" data-target="8.85">0</h4>
+                                <span>CGPA</span>
+                            </div>
+                            <div class="stat-box">
+                                <h4 class="counter" data-target="5">0</h4><span>+</span>
+                                <span>Projects</span>
+                            </div>
+                            <div class="stat-box">
+                                <h4 class="counter" data-target="10">0</h4><span>+</span>
+                                <span>Tech Skills</span>
+                            </div>
+                        </div>
+
+                        <div class="about-cta">
+                            <a href="Chaithanya - Software Developer Resume.pdf" class="btn primary-btn btn-ripple">
+                                <span>Download Resume</span> <i class="fas fa-download"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills section-padding">
+            <div class="container">
+                <div class="section-title gs-reveal">
+                    <h2>Technical <span class="neon-text">Skills</span></h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="skills-wrapper">
+                    <!-- Frontend -->
+                    <div class="skill-category gs-reveal">
+                        <div class="category-header">
+                            <i class="fas fa-laptop-code"></i>
+                            <h3>Frontend Development</h3>
+                        </div>
+                        <div class="skill-list">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span>HTML</span>
+                                    <span>95%</span>
+                                </div>
+                                <div class="progress-bar-wrap">
+                                    <div class="progress-fill" data-width="95%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span>CSS/SASS</span>
+                                    <span>90%</span>
+                                </div>
+                                <div class="progress-bar-wrap">
+                                    <div class="progress-fill" data-width="90%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span>JavaScript</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="progress-bar-wrap">
+                                    <div class="progress-fill" data-width="85%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Backend / Core -->
+                    <div class="skill-category gs-reveal" style="transition-delay: 0.1s;">
+                        <div class="category-header">
+                            <i class="fas fa-server"></i>
+                            <h3>Backend & Java Stack</h3>
+                        </div>
+                        <div class="skill-list">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span>Java</span>
+                                    <span>90%</span>
+                                </div>
+                                <div class="progress-bar-wrap">
+                                    <div class="progress-fill" data-width="90%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span>JDBC & Servlets</span>
+                                    <span>80%</span>
+                                </div>
+                                <div class="progress-bar-wrap">
+                                    <div class="progress-fill" data-width="80%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span>JSP</span>
+                                    <span>75%</span>
+                                </div>
+                                <div class="progress-bar-wrap">
+                                    <div class="progress-fill" data-width="75%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Database -->
+                    <div class="skill-category gs-reveal" style="transition-delay: 0.2s;">
+                        <div class="category-header">
+                            <i class="fas fa-database"></i>
+                            <h3>Databases</h3>
+                        </div>
+                        <div class="skill-list">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span>SQL</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="progress-bar-wrap">
+                                    <div class="progress-fill" data-width="85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span>MySQL</span>
+                                    <span>80%</span>
+                                </div>
+                                <div class="progress-bar-wrap">
+                                    <div class="progress-fill" data-width="80%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span>Oracle</span>
+                                    <span>70%</span>
+                                </div>
+                                <div class="progress-bar-wrap">
+                                    <div class="progress-fill" data-width="70%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects section-padding">
+            <div class="container">
+                <div class="section-title gs-reveal">
+                    <h2>Featured <span class="neon-text">Projects</span></h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="projects-grid">
+                    <!-- Project 1 -->
+                    <div class="project-card gs-reveal" data-tilt data-tilt-max="10" data-tilt-speed="400"
+                        data-tilt-perspective="1000">
+                        <div class="project-img">
+                            <div class="img-overlay">
+                                <a href="#" class="view-btn"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="view-btn"><i class="fab fa-github"></i></a>
+                            </div>
+                            <!-- Using a placeholder gradient for project images -->
+                            <div class="img-placeholder" style="background: linear-gradient(45deg, #1a1c29, #252840);">
+                                <i class="fas fa-spider fa-3x" style="color: #00c3ff;"></i>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-tags">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                            </div>
+                            <h3>Marvel Amazing Website</h3>
+                            <p>An immersive, highly interactive website showcasing Marvel characters and stories.
+                                Features smooth animations, dynamic grids, and a dark comic book theme.</p>
+                            <div class="project-links">
+                                <a href="#" class="link">Live Demo <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="project-card gs-reveal" data-tilt data-tilt-max="10" data-tilt-speed="400"
+                        data-tilt-perspective="1000">
+                        <div class="project-img">
+                            <div class="img-overlay">
+                                <a href="#" class="view-btn"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="view-btn"><i class="fab fa-github"></i></a>
+                            </div>
+                            <div class="img-placeholder" style="background: linear-gradient(45deg, #10121a, #1f2235);">
+                                <i class="fas fa-building fa-3x" style="color: #b700ff;"></i>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-tags">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JS</span>
+                            </div>
+                            <h3>IBM Corporate Redesign</h3>
+                            <p>A modernized, premium clone/redesign of the IBM corporate site. Focuses on accessibility,
+                                responsive design, and professional SaaS layout principles.</p>
+                            <div class="project-links">
+                                <a href="#" class="link">Live Demo <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="project-card gs-reveal" data-tilt data-tilt-max="10" data-tilt-speed="400"
+                        data-tilt-perspective="1000">
+                        <div class="project-img">
+                            <div class="img-overlay">
+                                <a href="#" class="view-btn"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="view-btn"><i class="fab fa-github"></i></a>
+                            </div>
+                            <div class="img-placeholder" style="background: linear-gradient(45deg, #0f1c24, #182e3a);">
+                                <i class="fas fa-ticket-alt fa-3x" style="color: #00ff88;"></i>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-tags">
+                                <span>Java</span>
+                                <span>JSP/Servlets</span>
+                                <span>MySQL</span>
+                            </div>
+                            <h3>Lottery Game Platform</h3>
+                            <p>A full-stack web application for playing and managing lottery games. Includes user
+                                authentication, ticket generation, database management, and robust backend logic.</p>
+                            <div class="project-links">
+                                <a href="#" class="link">Live Demo <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact section-padding">
+            <div class="container">
+                <div class="section-title gs-reveal">
+                    <h2>Get in <span class="neon-text">Touch</span></h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="contact-wrapper">
+                    <div class="contact-info gs-reveal-left">
+                        <h3>Let's build something <br> amazing together!</h3>
+                        <p>I'm currently seeking new opportunities and challenges. Whether you have a question, want to
+                            collaborate, or just want to say hi, my inbox is always open.</p>
+
+                        <div class="info-items">
+                            <div class="info-item">
+                                <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+                                <div>
+                                    <h4>Location</h4>
+                                    <p>Andhra Pradesh, India</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <div class="icon"><i class="fas fa-envelope"></i></div>
+                                <div>
+                                    <h4>Email</h4>
+                                    <a href="mailto:hello@chaithanya.com">mchaithanya456@gmail.com</a>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <div class="icon"><i class="fas fa-graduation-cap"></i></div>
+                                <div>
+                                    <h4>Education</h4>
+                                    <p>BCA Computer Applications (CGPA: 8.85)</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="social-links-footer">
+                            <a href="www.linkedin.com/in/m-chaithanya-b87360373" class="social-circle"><i
+                                    class="fab fa-linkedin-in"></i></a>
+                            <a href="https://github.com/chaithanya0805" class="social-circle"><i
+                                    class="fab fa-github"></i></a>
+                            <a href="#" class="social-circle"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.instagram.com/chaithu_.0805?igsh=MTU3YzIwdXExcmcwcg=="
+                                class="social-circle"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-container gs-reveal-right">
+                        <form id="contact-form" class="contact-form">
+                            <div class="form-group">
+                                <input type="text" id="name" required autocomplete="off">
+                                <label for="name">Your Name</label>
+                                <div class="line"></div>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="email" required autocomplete="off">
+                                <label for="email">Your Email</label>
+                                <div class="line"></div>
+                            </div>
+                            <div class="form-group">
+                                <textarea id="message" rows="5" required></textarea>
+                                <label for="message">Your Message</label>
+                                <div class="line"></div>
+                            </div>
+                            <button type="submit" class="btn primary-btn btn-submit btn-ripple">
+                                <span>Send Message</span> <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">Chaithanya<span>.</span></div>
+                <p>&copy; 2026 Chaithanya. All rights reserved.</p>
+                <a href="#home" class="scroll-top"><i class="fas fa-chevron-up"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <!-- Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- Vanilla Tilt for 3D card effects -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+
+    <!-- Custom Script -->
+    <script src="script.js"></script>
+</body>
+
+</html>
