@@ -78,6 +78,19 @@ a {
     color: inherit;
 }
 
+.modal-overlay,
+.modal-overlay * {
+    cursor: none !important;
+}
+
+.cursor-dot,
+.cursor-outline {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    z-index: 999999 !important;
+}
+
 ul {
     list-style: none;
 }
@@ -1605,3 +1618,5 @@ footer {
     gap: 30px;
     margin-top: 30px;
 }
+
+

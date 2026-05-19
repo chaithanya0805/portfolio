@@ -363,10 +363,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 // IMPORTANT: Replace 'YOUR_SERVICE_ID' and 'YOUR_TEMPLATE_ID' 
                 // with your actual EmailJS Service ID and Template ID.
                 await emailjs.sendForm(
-                    'service_a6x86j',
+                    'service_a6xk86j',
                     'template_kqjhfeh',
-                    this,
-                    'y46zWz4I-1gtdQM5r'
+                    contactForm,
+                    'F3a-ADh-4dEFV5QgP'
                 );
                 if (formStatus) {
                     formStatus.innerText = "Message sent successfully!";
@@ -377,14 +377,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 text.innerText = "Message Sent!";
                 icon.className = "fas fa-check";
             } catch (error) {
-                console.error("EmailJS Error:", error);
+                console.log("FULL ERROR:", error);
+                alert(JSON.stringify(error));
+
                 if (formStatus) {
                     formStatus.innerText = "Failed to send message. Please try again.";
                     formStatus.style.color = "#ff3b30";
                     formStatus.style.display = "block";
                 }
-                text.innerText = "Failed";
-                icon.className = "fas fa-times";
             }
 
             setTimeout(() => {
@@ -425,20 +425,20 @@ document.addEventListener("DOMContentLoaded", () => {
             color: "#00ff88",
             desc: "Developed a task management web application to organize daily tasks efficiently."
         },
-        {
-            name: "Expense Tracker System",
-            tags: ["Java", "Spring Boot", "MySQL", "React JS"],
-            icon: "fa-chart-pie",
-            color: "#ff00aa",
-            desc: "A full-stack application to track daily expenses, visualize spending patterns, and manage budgets effectively."
-        },
-        {
-            name: "E-Commerce Backend",
-            tags: ["Java", "Spring Boot", "REST APIs"],
-            icon: "fa-shopping-cart",
-            color: "#ffaa00",
-            desc: "Robust RESTful APIs for an online store including user authentication, product catalog, and order processing."
-        },
+   {
+    name: "Spider-Man Universe Project",
+    tags: ["HTML", "CSS", "JavaScript", "API"],
+    icon: "fa-spider",
+    color: "#e11d48",
+    desc: "Interactive Spider-Man themed web project showcasing characters, movie details, animations, and dynamic API-based content."
+},
+{
+    name: "Employee Management System",
+    tags: ["Java", "Spring Boot", "MySQL", "React JS"],
+    icon: "fa-users",
+    color: "#00c3ff",
+    desc: "Employee management application with CRUD operations, employee records management, and admin dashboard."
+},
         {
             name: "Weather Dashboard",
             tags: ["HTML", "CSS", "JavaScript"],
@@ -449,11 +449,27 @@ document.addEventListener("DOMContentLoaded", () => {
     ];
 
     const allSkillsData = [
-        "Core Java", "Advanced Java", "JavaScript", "React JS",
-        "HTML", "CSS", "Bootstrap", "Spring Boot",
-        "REST APIs", "JDBC", "Servlets", "JSP",
-        "MySQL", "Oracle", "SQL", "Git",
-        "GitHub", "VS Code", "Eclipse IDE", "Postman", "AWS Basics"
+        { name: "Core Java", icon: "fab fa-java", color: "#f89820" },
+        { name: "Advanced Java", icon: "fab fa-java", color: "#f89820" },
+        { name: "JavaScript", icon: "fab fa-js", color: "#f7df1e" },
+        { name: "React JS", icon: "fab fa-react", color: "#61dafb" },
+        { name: "HTML", icon: "fab fa-html5", color: "#e34f26" },
+        { name: "CSS", icon: "fab fa-css3-alt", color: "#1572b6" },
+        { name: "Bootstrap", icon: "fab fa-bootstrap", color: "#7952b3" },
+        { name: "Spring Boot", icon: "fas fa-leaf", color: "#6db33f" },
+        { name: "REST APIs", icon: "fas fa-plug", color: "#00c853" },
+        { name: "JDBC", icon: "fas fa-database", color: "#4caf50" },
+        { name: "Servlets", icon: "fas fa-server", color: "#ff9800" },
+        { name: "JSP", icon: "fas fa-code", color: "#2196f3" },
+        { name: "MySQL", icon: "fas fa-database", color: "#00758f" },
+        { name: "Oracle", icon: "fas fa-database", color: "#f80000" },
+        { name: "SQL", icon: "fas fa-database", color: "#336791" },
+        { name: "Git", icon: "fab fa-git-alt", color: "#f05032" },
+        { name: "GitHub", icon: "fab fa-github", color: "#ffffff" },
+        { name: "VS Code", icon: "fas fa-laptop-code", color: "#007acc" },
+        { name: "Eclipse IDE", icon: "fas fa-moon", color: "#2c2255" },
+        { name: "Postman", icon: "fas fa-paper-plane", color: "#ff6c37" },
+        { name: "AWS Basics", icon: "fas fa-cloud", color: "#ff9900" }
     ];
 
     if (viewProjectsBtn) {
@@ -529,12 +545,36 @@ document.addEventListener("DOMContentLoaded", () => {
         let html = '';
         allSkillsData.forEach(skill => {
             html += `
-            <div class="modal-skill-card">
-                <i class="fas fa-check-circle"></i>
-                <span>${skill}</span>
-            </div>`;
+        <div class="modal-skill-card">
+            <i class="${skill.icon}" style="color:${skill.color};"></i>
+            <span>${skill.name}</span>
+        </div>`;
         });
+
         grid.innerHTML = html;
     }
+});
 
+
+// Auto scroll from stats buttons
+document.addEventListener("DOMContentLoaded", function () {
+    const statBoxes = document.querySelectorAll(".stat-box");
+
+    if (statBoxes[1]) {
+        statBoxes[1].addEventListener("click", function () {
+            document.getElementById("projects").scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+        });
+    }
+
+    if (statBoxes[2]) {
+        statBoxes[2].addEventListener("click", function () {
+            document.getElementById("skills").scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+        });
+    }
 });
