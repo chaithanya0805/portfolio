@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    
+
     // Register GSAP ScrollTrigger
     gsap.registerPlugin(ScrollTrigger);
 
@@ -8,15 +8,15 @@ document.addEventListener("DOMContentLoaded", () => {
        ========================================================================== */
     const preloader = document.getElementById('preloader');
     const progressBar = document.getElementById('loader-progress');
-    
+
     // Simulate loading progress
     let progress = 0;
     const interval = setInterval(() => {
         progress += Math.floor(Math.random() * 15) + 5;
-        if(progress > 100) progress = 100;
+        if (progress > 100) progress = 100;
         progressBar.style.width = `${progress}%`;
-        
-        if(progress === 100) {
+
+        if (progress === 100) {
             clearInterval(interval);
             setTimeout(() => {
                 gsap.to(preloader, {
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
        ========================================================================== */
     const cursorDot = document.getElementById('cursor-dot');
     const cursorOutline = document.getElementById('cursor-outline');
-    
+
     // Check if device is touch capable to hide cursor logic if needed
     const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 
@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Add hover effect to links and buttons
         const hoverables = document.querySelectorAll('a, button, input, textarea, .project-card, .stat-box');
-        
+
         hoverables.forEach(el => {
             el.addEventListener('mouseenter', () => {
                 document.body.classList.add('cursor-hover');
@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Check saved theme
     const savedTheme = localStorage.getItem('portfolio-theme');
-    if(savedTheme) {
+    if (savedTheme) {
         body.setAttribute('data-theme', savedTheme);
         updateThemeIcon(savedTheme);
     }
@@ -92,14 +92,14 @@ document.addEventListener("DOMContentLoaded", () => {
     themeToggleBtn.addEventListener('click', () => {
         const currentTheme = body.getAttribute('data-theme');
         const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-        
+
         body.setAttribute('data-theme', newTheme);
         localStorage.setItem('portfolio-theme', newTheme);
         updateThemeIcon(newTheme);
     });
 
     function updateThemeIcon(theme) {
-        if(theme === 'light') {
+        if (theme === 'light') {
             themeIcon.className = 'fas fa-moon';
         } else {
             themeIcon.className = 'fas fa-sun';
@@ -121,11 +121,11 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
             navbar.classList.remove('scrolled');
         }
-        
+
         // Update active link based on scroll position
         let current = '';
         const sections = document.querySelectorAll('section');
-        
+
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
             const sectionHeight = section.clientHeight;
@@ -173,9 +173,9 @@ document.addEventListener("DOMContentLoaded", () => {
     /* ==========================================================================
        Initialize Plugins
        ========================================================================== */
-    
+
     // Initialize Particles.js if available
-    if(typeof particlesJS !== 'undefined') {
+    if (typeof particlesJS !== 'undefined') {
         particlesJS("particles-js", {
             "particles": {
                 "number": { "value": 40, "density": { "enable": true, "value_area": 800 } },
@@ -203,7 +203,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Initialize VanillaTilt if available
-    if(typeof VanillaTilt !== 'undefined') {
+    if (typeof VanillaTilt !== 'undefined') {
         VanillaTilt.init(document.querySelectorAll("[data-tilt]"), {
             max: 15,
             speed: 400,
@@ -216,26 +216,26 @@ document.addEventListener("DOMContentLoaded", () => {
        Animations Logic (GSAP)
        ========================================================================== */
     function initAnimations() {
-        
+
         // Hero Timeline
         const tlHero = gsap.timeline();
         tlHero.from(".navbar", { y: -50, opacity: 0, duration: 0.8, ease: "power3.out" })
-              .from(".hero-greeting", { y: 20, opacity: 0, duration: 0.5 }, "-=0.4")
-              .from(".hero-name", { y: 20, opacity: 0, duration: 0.5 }, "-=0.3")
-              .from(".hero-role", { y: 20, opacity: 0, duration: 0.5 }, "-=0.3")
-              .from(".hero-desc", { y: 20, opacity: 0, duration: 0.5 }, "-=0.3")
-              .from(".hero-cta", { y: 20, opacity: 0, duration: 0.5 }, "-=0.3")
-              .from(".hero-socials .social-icon", { y: 20, opacity: 0, duration: 0.4, stagger: 0.1 }, "-=0.3")
-              .from(".hero-visual", { scale: 0.8, opacity: 0, duration: 1, ease: "back.out(1.5)" }, "-=1");
+            .from(".hero-greeting", { y: 20, opacity: 0, duration: 0.5 }, "-=0.4")
+            .from(".hero-name", { y: 20, opacity: 0, duration: 0.5 }, "-=0.3")
+            .from(".hero-role", { y: 20, opacity: 0, duration: 0.5 }, "-=0.3")
+            .from(".hero-desc", { y: 20, opacity: 0, duration: 0.5 }, "-=0.3")
+            .from(".hero-cta", { y: 20, opacity: 0, duration: 0.5 }, "-=0.3")
+            .from(".hero-socials .social-icon", { y: 20, opacity: 0, duration: 0.4, stagger: 0.1 }, "-=0.3")
+            .from(".hero-visual", { scale: 0.8, opacity: 0, duration: 1, ease: "back.out(1.5)" }, "-=1");
 
         // General Scroll Reveals
         const revealElements = document.querySelectorAll(".gs-reveal");
         revealElements.forEach((elem) => {
-            gsap.fromTo(elem, 
-                { y: 50, opacity: 0 }, 
-                { 
-                    y: 0, opacity: 1, 
-                    duration: 0.8, 
+            gsap.fromTo(elem,
+                { y: 50, opacity: 0 },
+                {
+                    y: 0, opacity: 1,
+                    duration: 0.8,
                     ease: "power3.out",
                     scrollTrigger: {
                         trigger: elem,
@@ -248,11 +248,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Left Reveals
         document.querySelectorAll(".gs-reveal-left").forEach((elem) => {
-            gsap.fromTo(elem, 
-                { x: -50, opacity: 0 }, 
-                { 
-                    x: 0, opacity: 1, 
-                    duration: 0.8, 
+            gsap.fromTo(elem,
+                { x: -50, opacity: 0 },
+                {
+                    x: 0, opacity: 1,
+                    duration: 0.8,
                     ease: "power3.out",
                     scrollTrigger: { trigger: elem, start: "top 85%" }
                 }
@@ -261,11 +261,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Right Reveals
         document.querySelectorAll(".gs-reveal-right").forEach((elem) => {
-            gsap.fromTo(elem, 
-                { x: 50, opacity: 0 }, 
-                { 
-                    x: 0, opacity: 1, 
-                    duration: 0.8, 
+            gsap.fromTo(elem,
+                { x: 50, opacity: 0 },
+                {
+                    x: 0, opacity: 1,
+                    duration: 0.8,
                     ease: "power3.out",
                     scrollTrigger: { trigger: elem, start: "top 85%" }
                 }
@@ -292,7 +292,7 @@ document.addEventListener("DOMContentLoaded", () => {
         counters.forEach(counter => {
             const target = parseFloat(counter.getAttribute('data-target'));
             let isFloat = target % 1 !== 0;
-            
+
             ScrollTrigger.create({
                 trigger: counter,
                 start: "top 90%",
@@ -302,7 +302,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         value: target,
                         duration: 2,
                         ease: "power1.out",
-                        onUpdate: function() {
+                        onUpdate: function () {
                             counter.innerText = isFloat ? this.targets()[0].value.toFixed(2) : Math.floor(this.targets()[0].value);
                         }
                     });
@@ -316,49 +316,224 @@ document.addEventListener("DOMContentLoaded", () => {
        ========================================================================== */
     const rippleButtons = document.querySelectorAll('.btn-ripple');
     rippleButtons.forEach(btn => {
-        btn.addEventListener('click', function(e) {
-            
+        btn.addEventListener('click', function (e) {
+
             // Check if it's an anchor to prevent default if needed, 
             // but we want anchors to still navigate unless it's a form submit button
-            if(this.tagName === 'BUTTON' && this.type === 'submit') {
-                e.preventDefault(); // Handle form submission manually if needed
+            if (this.tagName === 'BUTTON' && this.type === 'submit') {
+                // Form submission prevents default in the submit event handler now
             }
 
             let x = e.clientX - e.target.getBoundingClientRect().left;
             let y = e.clientY - e.target.getBoundingClientRect().top;
-            
+
             let ripples = document.createElement('span');
             ripples.className = 'ripple';
             ripples.style.left = x + 'px';
             ripples.style.top = y + 'px';
-            
+
             this.appendChild(ripples);
-            
+
             setTimeout(() => {
                 ripples.remove();
             }, 600);
-
-            // Simulation of form submission for the demo
-            if(this.tagName === 'BUTTON' && this.type === 'submit') {
-                const icon = this.querySelector('i');
-                const text = this.querySelector('span');
-                const originalText = text.innerText;
-                
-                text.innerText = "Sending...";
-                icon.className = "fas fa-spinner fa-spin";
-                
-                setTimeout(() => {
-                    text.innerText = "Message Sent!";
-                    icon.className = "fas fa-check";
-                    document.getElementById('contact-form').reset();
-                    
-                    setTimeout(() => {
-                        text.innerText = originalText;
-                        icon.className = "fas fa-paper-plane";
-                    }, 3000);
-                }, 1500);
-            }
         });
     });
+
+    /* ==========================================================================
+       Contact Form Submission
+       ========================================================================== */
+    const contactForm = document.getElementById('contact-form');
+    const formStatus = document.getElementById('form-status');
+    const submitBtn = document.getElementById('submit-btn');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const icon = submitBtn.querySelector('i');
+            const text = submitBtn.querySelector('span');
+            const originalText = text.innerText;
+
+            text.innerText = "Sending...";
+            icon.className = "fas fa-spinner fa-spin";
+            if (formStatus) formStatus.style.display = 'none';
+
+            try {
+                // IMPORTANT: Replace 'YOUR_SERVICE_ID' and 'YOUR_TEMPLATE_ID' 
+                // with your actual EmailJS Service ID and Template ID.
+                await emailjs.sendForm(
+                    'service_a6x86j',
+                    'template_kqjhfeh',
+                    this
+                );
+                if (formStatus) {
+                    formStatus.innerText = "Message sent successfully!";
+                    formStatus.style.color = "#00ff88";
+                    formStatus.style.display = "block";
+                }
+                contactForm.reset();
+                text.innerText = "Message Sent!";
+                icon.className = "fas fa-check";
+            } catch (error) {
+                console.error("EmailJS Error:", error);
+                if (formStatus) {
+                    formStatus.innerText = "Failed to send message. Please try again.";
+                    formStatus.style.color = "#ff3b30";
+                    formStatus.style.display = "block";
+                }
+                text.innerText = "Failed";
+                icon.className = "fas fa-times";
+            }
+
+            setTimeout(() => {
+                text.innerText = originalText;
+                icon.className = "fas fa-paper-plane";
+            }, 3000);
+        });
+    }
+
+    /* ==========================================================================
+       Modals Logic
+       ========================================================================== */
+    const projectsModal = document.getElementById('projects-modal');
+    const skillsModal = document.getElementById('skills-modal');
+    const viewProjectsBtn = document.getElementById('view-projects-btn');
+    const viewSkillsBtn = document.getElementById('view-skills-btn');
+    const closeBtns = document.querySelectorAll('.close-modal');
+
+    const allProjectsData = [
+        {
+            name: "ATS Resume Checker Application",
+            tags: ["Java", "Spring Boot", "React JS"],
+            icon: "fa-file-alt",
+            color: "#00c3ff",
+            desc: "Built a web app to analyze resumes for ATS compatibility. Used Spring Boot to match resume keywords with job descriptions."
+        },
+        {
+            name: "AI Chatbot Web Application",
+            tags: ["Java", "Spring Boot", "JavaScript"],
+            icon: "fa-robot",
+            color: "#b700ff",
+            desc: "Built a web-based chatbot for real-time user responses. Used Spring Boot to process input and generate replies."
+        },
+        {
+            name: "Task Manager Application",
+            tags: ["Java", "Spring Boot", "React JS", "MySQL"],
+            icon: "fa-tasks",
+            color: "#00ff88",
+            desc: "Developed a task management web application to organize daily tasks efficiently."
+        },
+        {
+            name: "Expense Tracker System",
+            tags: ["Java", "Spring Boot", "MySQL", "React JS"],
+            icon: "fa-chart-pie",
+            color: "#ff00aa",
+            desc: "A full-stack application to track daily expenses, visualize spending patterns, and manage budgets effectively."
+        },
+        {
+            name: "E-Commerce Backend",
+            tags: ["Java", "Spring Boot", "REST APIs"],
+            icon: "fa-shopping-cart",
+            color: "#ffaa00",
+            desc: "Robust RESTful APIs for an online store including user authentication, product catalog, and order processing."
+        },
+        {
+            name: "Weather Dashboard",
+            tags: ["HTML", "CSS", "JavaScript"],
+            icon: "fa-cloud-sun",
+            color: "#00aaff",
+            desc: "Interactive web app providing real-time weather updates and 7-day forecasts using external APIs."
+        }
+    ];
+
+    const allSkillsData = [
+        "Core Java", "Advanced Java", "JavaScript", "React JS",
+        "HTML", "CSS", "Bootstrap", "Spring Boot",
+        "REST APIs", "JDBC", "Servlets", "JSP",
+        "MySQL", "Oracle", "SQL", "Git",
+        "GitHub", "VS Code", "Eclipse IDE", "Postman", "AWS Basics"
+    ];
+
+    if (viewProjectsBtn) {
+        viewProjectsBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            populateProjectsModal();
+            projectsModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    }
+
+    if (viewSkillsBtn) {
+        viewSkillsBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            populateSkillsModal();
+            skillsModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    }
+
+    closeBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            projectsModal.classList.remove('active');
+            skillsModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+    });
+
+    window.addEventListener('click', (e) => {
+        if (e.target === projectsModal) {
+            projectsModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        if (e.target === skillsModal) {
+            skillsModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+    });
+
+    function populateProjectsModal() {
+        const grid = document.querySelector('.modal-projects-grid');
+        if (!grid) return;
+
+        let html = '';
+        allProjectsData.forEach(p => {
+            let tagsHtml = p.tags.map(t => `<span>${t}</span>`).join('');
+            html += `
+            <div class="project-card" style="margin: 0; width: 100%;">
+                <div class="project-img" style="height: 150px;">
+                    <div class="img-placeholder" style="background: linear-gradient(45deg, #1a1c29, #252840);">
+                        <i class="fas ${p.icon} fa-3x" style="color: ${p.color};"></i>
+                    </div>
+                </div>
+                <div class="project-content" style="padding: 20px;">
+                    <div class="project-tags">
+                        ${tagsHtml}
+                    </div>
+                    <h3 style="font-size: 1.2rem;">${p.name}</h3>
+                    <p style="font-size: 0.9rem; margin-bottom: 15px;">${p.desc}</p>
+                    <div class="project-links">
+                        <a href="#" class="link">Live Demo <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>`;
+        });
+        grid.innerHTML = html;
+    }
+
+    function populateSkillsModal() {
+        const grid = document.querySelector('.modal-skills-grid');
+        if (!grid) return;
+
+        let html = '';
+        allSkillsData.forEach(skill => {
+            html += `
+            <div class="modal-skill-card">
+                <i class="fas fa-check-circle"></i>
+                <span>${skill}</span>
+            </div>`;
+        });
+        grid.innerHTML = html;
+    }
 
 });
