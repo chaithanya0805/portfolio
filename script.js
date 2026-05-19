@@ -365,7 +365,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 await emailjs.sendForm(
                     'service_a6x86j',
                     'template_kqjhfeh',
-                    this
+                    this,
+                    'y46zWz4I-1gtdQM5r'
                 );
                 if (formStatus) {
                     formStatus.innerText = "Message sent successfully!";
