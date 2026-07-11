@@ -426,7 +426,7 @@ document.addEventListener("DOMContentLoaded", () => {
             desc: "Developed a task management web application to organize daily tasks efficiently."
         },
    {
-    name: "Spider-Man Universe Project",
+    name: "MARVEL Amazing Project",
     tags: ["HTML", "CSS", "JavaScript", "API"],
     icon: "fa-spider",
     color: "#e11d48",
